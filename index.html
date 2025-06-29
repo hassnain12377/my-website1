@@ -1,0 +1,520 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #161616;
+            background-color: #f3f1f1;
+        }
+
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #1f2937, #065f46);
+            color: rgb(249, 245, 245);
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(235, 231, 231, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .logo p {
+            color: #86efac;
+            font-size: 0.9rem;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: rgb(14, 12, 12);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #86efac;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #14532d, #166534);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .status-banner {
+            background-color: #dc2626;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1f2937;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f9fafb;
+            border-left: 4px solid #059669;
+            border-radius: 0.5rem;
+        }
+
+        .timeline-date {
+            min-width: 120px;
+            font-weight: bold;
+            color: #059669;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            padding: 4rem 0;
+            background: #f3f4f6;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+        }
+
+        .gallery-caption h3 {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .gallery-caption p {
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Press Releases Section */
+        .press-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .press-item {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .press-item h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+
+        .press-meta {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .press-item p {
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #14532d;
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section p {
+            color: #86efac;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-notice {
+            background: #991b1b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+        }
+
+        .footer-notice p {
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #166534;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            color: #86efac;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+            }
+
+            .timeline-date {
+                min-width: auto;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation Bunyan Al Marsoos - ISPR Pakistan</title>
+    
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div>
+                        <h1>ISPR Pakistan</h1>
+                        <p>Inter-Services Public Relations</p>
+                    </div>
+                </div>
+                <nav class="nav">
+                    <a href="#timeline">Timeline</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#press">Press Releases</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Operation Bunyan Al Marsoos</h1>
+            <h2>Pak-Indo Conflict 2025</h2>
+            <p>
+                Documentation of a military operation launched by Pakistan in response to alleged Indian aggression, specifically targeting Indian military installations
+            </p>
+            <div class="status-banner">
+                ACTIVE OPERATIONS STATUS: ENDED
+            </div>
+        </div>
+    </section>
+
+<br>
+
+<section id="conflict-preview" class="timeline-section">
+    <div class="container">
+        <h2 class="section-title">Conflict Preview</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">April 22, 2025</div>
+                <div class="timeline-content">
+                    <h3>🇮🇳 Pahalgam Attack</h3>
+                    <p>Pakistan strongly denied India's false claims about the 22 April 2025 Pahalgam attack, where 26 civilians were killed. Pakistan had no role in the attack and condemns the killing of innocent people. The way the attack was carried out, and how quickly India blamed Pakistan, shows it was a planned false flag operation. India used this to spread hate, cover up its crimes in Kashmir, and prepare for aggression. Pakistan wants peace but will not stay silent if any aggression take place.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2 class="section-title">Operation Bunyan Al Marsoos</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">April 24-30, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Diplomatic Fallout & Border Clashes</h3>
+                        <p>India responded by:
+                        Expelling Pakistani diplomats. Suspending the Indus Waters Treaty. Shutting the Attari border and diplomatic channels. Pakistan closed its airspace to Indian carriers beginning April 24, escalating to total closure by May 7, eventually extending restrictions until at least July 24. CrossLoC clashes—mainly small-arms and artillery—were reported from April 24 onward.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 7, 2025</div>
+                    <div class="timeline-content">
+                        <h3>🇮🇳 Operation Sindoor & Missile/Air Strikes</h3>
+                        <p>May 7: India launched Operation Sindoor, conducting missile and air strikes on nine locations across Pakistan and AJK, targeting alleged militant camps; the strikes lasted around 25 minutes. Pakistan reported civilian casualties from strikes on Muridke, Bahawalpur, and Muzaffarabad. </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 7, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Retaliation to Indian Aggression</h3>
+                        <p>In response to India's aggression during Operation Sindoor, the Pakistan Air Force (PAF), successfully shot down six Indian aircraft without crossing into Indian airspace. Utilizing J-10C fighter jets armed with long-range BVR (Beyond Visual Range) PL-15 missiles, the PAF engaged targets from within Pakistani airspace as Indian jets conducted their strike missions from across the border. The aircraft shot down included two Su-30MKIs, three Rafale jets, and one Mirage 2000H, all neutralized mid-air while attempting standoff attacks, highlighting the precision and deterrent strength of Pakistan's modern air defense and BVR combat capabilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 10, 2025</div>
+                    <div class="timeline-content">
+                        <h3>🇵🇰 Pakistan's Response: Operation Bunyan al-Marsoos</h3>
+                        <p>On May 10, Pakistan initiated Operation Bunyan al-Marsoos, targeting Indian military installations, including airbases and missile sites in Jammu & Kashmir and Gujarat Missile and drone strikes on Indian bases (Udhampur, Pathankot, Adampur, Bhuj, Nagrota, Beas, Uri, Poonch) Pakistan shot down numerous drones, destroyed some S-400 batteries and BrahMos missile storage</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">May 10-May 18, 2025</div>
+                    <div class="timeline-content">
+                        <h3>Ceasefire & Aftermath </h3>
+                        <p>A ceasefire was announced on May 10, following diplomatic intervention from the US, UK, China, and Saudi Arabia. Pakista's military leadership, including Army Chief General Asim Munir, received accolades—Munir was promoted to Field Marshal on May 20 Pakistan released dossiers on May 18-19 accusing India of staging a false-flag at Pahalgam, blaming it for civilian harm, and detailing Bunyan al-Marsoos as a lawful, measured retaliation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Operation Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/paf-vs-iaf-2.webp" alt="Military Operation">
+                    <div class="gallery-caption">
+                        <h3>Wreckage of Rafale Jet</h3>
+                        <p>Wreckage of Rafale jet after the retaliation by Pakistan Air Force.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/whatsapp-img-1.jpeg.jpeg" alt="Military Operation">
+                    <div class="gallery-caption">
+                        <h3>Operation Sindoor Attack Sites</h3>
+                        <p>Pakistan Army units advancing towards strategic positions along the Line of Control.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/whatsapp-img-2.jpeg" alt="Artillery">
+                    <div class="gallery-caption">
+                        <h3>Damage to Mosque During Indian Aggression</h3>
+                        <p>During India's unprovoked aggression, a mosque in the affected area sustained partial damage.</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/bunyan-al-marsoos.jpeg" alt="Naval Operations">
+                    <div class="gallery-caption">
+                        <h3>Operation Bunyan Al Marsoos</h3>
+                        <p>Ballistic missile launched at india in Operation Bunyan Al Marsoos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="press" class="press-section">
+        <div class="container">
+            <h2 class="section-title">Press Releases</h2>
+            
+            <div class="press-item">
+                <h3>Pahalgam False Flag & Diplomatic Fallout</h3>
+                <div class="press-meta">April 22, 2025 | 14:30 PKT | ISPR</div>
+                <p>On April 22, 2025, a deadly terrorist attack occurred in Pahalgam, IIOJK, killing 26 civilians. Without evidence or international consultation, the Indian government falsely blamed Pakistan-based elements, later revealed—through intercepted communications and intelligence leaks—as a coordinated false flag orchestrated by Indian intelligence to justify aggression.<br>
+                    This triggered: Expulsion of Pakistani diplomats by India. Suspension of the Indus Waters Treaty. Closure of cross-border trade & airspace.</p>
+            </div>
+
+            <div class="press-item">
+                <h3>🇮🇳 Operation Sindoor - Indian Air & Missile Strikes</h3>
+                <div class="press-meta">May 7, 2025 | 09:15 PKT | ISPR</div>
+                <p>On the night of May 7, 2025, India launched Operation Sindoor, a premeditated military strike targeting multiple Pakistani locations. Strikes targeted Muridke, Muzaffarabad, and Bahawalpur. Pakistan's air defense systems activated, intercepting most missiles, while PAF aircraft were scrambled. Indian Air Force used Su-30MKIs, Rafale jets, and Mirage 2000s were shot down. Civilian casualties and infrastructure damage were limited due to effective early warning systems. Pakistan lodged formal protests with the UN and OIC, calling the strikes “an act of war under false pretenses.” </p>
+            </div>
+
+            <div class="press-item">
+                <h3>🇵🇰 Retaliation to Indian Aggression - Swift BVR Response</h3>
+                <div class="press-meta">May 7, 2025 | 16:45 PKT | ISPR</div>
+                <p>In a retaliation response, Pakistan Air Force (PAF) executed a Beyond-Visual-Range (BVR) counterstrike mission before launching any wider operation. J-10C fighter jets, using PL-15 BVR missiles, shot down six Indian aircraft — including two Su-30MKIs, three Rafale jets, and one Mirage 2000H — from within Pakistani airspace. Indian jets had carried out aggression from inside their own airspace and were engaged without PAF crossing the border. PAF AEW&C and EW units provided critical radar lock and jamming support.</p>
+            </div>
+
+            <div class="press-item">
+                <h3>🇵🇰 Operation Bunyan-al-Marsous - Multi-Domain Strategic Response</h3>
+                <div class="press-meta">May 10, 2025 | 16:45 PKT | ISPR</div>
+                <p>On May 10, 2025, the Pakistan Armed Forces launched Operation Bunyan al-Marsous (“The Solid Structure”), a calibrated and coordinated military response executed across air, land, cyber, and intelligence domains. Precision strikes were conducted on hostile military infrastructure, including command centers, radar installations, and forward airbases located deep within Indian territory, targeting platforms used in earlier aggression. Cyber operations disrupted Indian digital command-and-control systems, neutralizing key networks for over 36 hours, creating strategic disarray across enemy lines. ISI and Military Intelligence played a pivotal role by providing real-time, high-precision targeting data, enabling time-sensitive and proportional responses.</p>
+            </div>
+
+            <div class="press-item">
+                <h3>🤝 Ceasefire & Aftermath</h3>
+                <div class="press-meta">May 10, 2025 | 11:30 PKT | ISPR</div>
+                <p>Following mounting international pressure and mediation by China, Saudi Arabia, and the United States, a mutual ceasefire was declared on May 10, 2025, later formalized via backchannel diplomacy. Pakistan promoted General Asim Munir to Field Marshal for exemplary leadership. Pakistan released a comprehensive dossier exposing India's false flag, illegal strikes, and war crimes. The Martyrs of Truth Memorial was announced to honor fallen soldiers and civilians. Pakistan reiterated its commitment to peace with dignity, but warned of a full-spectrum response to any future provocation.</p>
+            </div>
+
+            <br>
+
+            <div class="press-item">
+                <h3>📢 DG ISPR Statement:</h3>
+                <p>“Pakistan's Armed Forces responded with professionalism, restraint, and precision. We neither initiated hostility nor sought escalation, but defended every inch of our homeland with unwavering resolve. Any misadventure will be met with consequences far beyond expectation.” <br><br>
+                — Major General Ahmed Sharif Chaudhry, DG ISPR</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <h3>ISPR Pakistan</h3>
+                        <p>Inter-Services Public Relations</p>
+                    </div>
+                    <p>Not Official communication channel of Pakistan Armed Forces providing authentic updates on national security matters.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Information</h4>
+                    <p>📞 Emergency Hotline: +92-51-9271234</p>
+                    <p>📧 hassnainmuhammad857@gmail.com</p>
+                    <p>🌐 www.ispr.gov.pk</p>
+                    <p>📍 GHQ, Rawalpindi, Pakistan</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Important Notice</h4>
+                    <div class="footer-notice">
+                        <p>⚠️ This website does not contain any official military communications. All information is verified.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Muhammad Hassnain, Pakistan Armed Forces. All rights reserved.</p>
+                <p>Pakistan Zindabad | پاکستان زندہ باد</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
